@@ -2,6 +2,11 @@ function sortear(){
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
+
+    if( quantidade > ate - de + 1){
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        return;
+    }
     
     let numerosSorteados = [];
     let numero;
@@ -12,7 +17,7 @@ function sortear(){
 
         while(numerosSorteados.includes(numero)){
             numero = obterNumeroAleatorio(de, ate);
-        }
+        }  
         numerosSorteados.push(numero);
     }
 
